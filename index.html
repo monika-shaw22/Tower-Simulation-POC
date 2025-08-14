@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="/Tower-Simulation-POC/cesium/Widgets/widgets.css">
+  <script src="/Tower-Simulation-POC/cesium/Cesium.js"></script>
+
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/Tower-Simulation-POC/vite.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MetaworldX</title>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.120/Build/Cesium/Widgets/widgets.css" rel="stylesheet" />
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.120/Build/Cesium/Cesium.js"></script>
+  <script src="./CesiumHeatmap.js"></script>
+  <script type="module" crossorigin src="/Tower-Simulation-POC/assets/index-Cm1mnEVB.js"></script>
+  <link rel="stylesheet" crossorigin href="/Tower-Simulation-POC/assets/index-B0OdqmAs.css">
+</head>
+
+<body>
+  <div class="app">
+    <div class="viewer-wrapper">
+      <div id="cesiumContainer"></div>
+      <!-- <nav class="topnav">
+          <div class="logo">
+            <h2>
+             
+              <span class="gradient">X</span>
+            </h2>
+          </div>
+        </nav> -->
+
+      <div class="sidebar">
+        <div class="sidebar-content">
+          <!-- Wind Speed -->
+          <div class="sidebar-section">
+            <label for="windSlider" class="section-title">
+              Wind Speed: <span id="windValue">20</span> km/h
+            </label>
+            <input type="range" id="windSlider" min="20" max="200" step="1" value="20" class="slider-input" />
+          </div>
+          <!-- Typhoon Speed -->
+          <div class="sidebar-section">
+            <label for="typhoonSlider" class="section-title">
+              Typhoon Speed: <span id="typhoonValue">20</span> km/h
+            </label>
+            <input type="range" id="typhoonSlider" min="20" max="200" step="1" value="20" class="slider-input" />
+          </div>
+
+          <!-- Wind Direction -->
+          <div class="sidebar-section no-border">
+            <label for="windDirection" class="section-title">Wind Direction:</label>
+            <select id="windDirection" class="dropdown-select">
+              <option value="east">East</option>
+              <option value="north">North</option>
+              <option value="south">South</option>
+              <option value="west">West</option>
+            </select>
+          </div>
+
+           <button id="toggleHeatmapBtn" class="toggleHeatmap">Toggle Heatmap</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const windSlider = document.getElementById("windSlider");
+    const windValue = document.getElementById("windValue");
+
+    const typhoonSlider = document.getElementById("typhoonSlider");
+    const typhoonValue = document.getElementById("typhoonValue");
+
+    function updateSliderBackground(sliderEl) {
+      const value =
+        ((sliderEl.value - sliderEl.min) / (sliderEl.max - sliderEl.min)) *
+        100;
+      const fillPercent = value > 0 ? value : 1; // ensure minimum visible fill
+      sliderEl.style.background = `linear-gradient(
+      to right,
+      #01c9d0 ${fillPercent}%,
+      #01c9d04d ${fillPercent}%
+    )`;
+    }
+
+    windSlider.addEventListener("input", () => {
+      windValue.textContent = windSlider.value;
+      updateSliderBackground(windSlider);
+    });
+
+    typhoonSlider.addEventListener("input", () => {
+      typhoonValue.textContent = typhoonSlider.value;
+      updateSliderBackground(typhoonSlider);
+    });
+
+    // Initialize both sliders
+    updateSliderBackground(windSlider);
+    updateSliderBackground(typhoonSlider);
+  </script>
+</body>
+
+</html>
