@@ -57,7 +57,7 @@ let windSpeedFactor = 0.2;
 let rainFallSpeed = 0.2;
 
 function loadWindLayer(direction) {
-    const fileName = `/wind_${direction}.json`;
+    const fileName = `../public/wind_${direction}.json`;
     fetch(fileName)
         .then(response => response.json())
         .then(data => {

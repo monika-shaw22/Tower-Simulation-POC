@@ -21,7 +21,7 @@ export const czml = [
             epoch: "2019-06-01T16:00:00Z"
         },
         model: {
-            gltf: "/tower.glb",
+            gltf: "../../public/tower.glb",
             scale: 0.06, // 50 meters tall
             //minimumPixelSize: 100,
             runAnimations: true,

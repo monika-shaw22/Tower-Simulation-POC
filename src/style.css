@@ -12,14 +12,14 @@ body {
 
 @font-face {
   font-family: "Drupadi";
-  src: url("/fonts/Drupadi-Regular.otf") format("opentype");
+  src: url("../public/fonts/Drupadi-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "CodecPro";
-  src: url("/fonts/CodecPro-Regular.ttf") format("truetype");
+  src: url("../public/fonts/CodecPro-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
