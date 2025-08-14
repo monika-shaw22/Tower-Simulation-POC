@@ -2,13 +2,12 @@ import './index.css'
 import { WindLayer } from 'cesium-wind-layer';
 import { czml } from './utils/constatnt';
 import * as Cesium from 'cesium';
-console.log(import.meta.env.VITE_CESIUM_ION_TOKEN);
 
 Cesium.Ion.defaultAccessToken = import.meta.env.VITE_CESIUM_ION_TOKEN;
 
 const viewer = new Cesium.Viewer("cesiumContainer", {
     animation: true,
-    timeline: true,
+    timeline: false,
     fullscreenButton: true,
     baseLayerPicker: true
 });
