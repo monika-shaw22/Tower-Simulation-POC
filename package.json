@@ -1,0 +1,21 @@
+{
+  "name": "metaworld",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.0.4"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "cesium": "^1.132.0",
+    "cesium-wind-layer": "^0.10.0",
+    "tailwindcss": "^4.1.11",
+    "vite-plugin-cesium": "^1.2.23"
+  }
+}
